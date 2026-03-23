@@ -1,5 +1,6 @@
 import { Coffee, Clock, MapPin } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function Hero() {
   return (
@@ -49,27 +50,25 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-              <a href="/menu">
-              <button
-                className="px-8 sm:px-10 py-3 sm:py-4 bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 text-sm tracking-[0.15em]"
+              <Link
+                href="/menu"
+                className="inline-block px-8 sm:px-10 py-3 sm:py-4 bg-white text-gray-900 hover:bg-gray-100 transition-all duration-300 text-sm tracking-[0.15em] text-center"
                 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400 }}
               >
                 EXPLORE MENU
-              </button>
-              </a>
-<a href="#contact">
-              <button
-                className="px-8 sm:px-10 py-3 sm:py-4 border-2 border-white text-white hover:bg-white hover:text-gray-900 transition-all duration-300 text-sm tracking-[0.15em]"
+              </Link>
+              <Link
+                href="#contact"
+                className="inline-block px-8 sm:px-10 py-3 sm:py-4 border-2 border-white text-white hover:bg-white hover:text-gray-900 transition-all duration-300 text-sm tracking-[0.15em] text-center"
                 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400 }}
               >
                 VISIT US
-              </button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* Bottom: info cards — gradient only fades below these */}
+        {/* Bottom: info cards */}
         <div className="relative mt-8">
           <div className="grid grid-cols-3 gap-3 sm:gap-6">
             <div className="backdrop-blur-md bg-white/10 border border-white/20 p-4 sm:p-6">
@@ -118,12 +117,10 @@ export function Hero() {
               </p>
             </div>
           </div>
-
-
         </div>
       </div>
 
-      {/* Scroll Indicator — hidden on mobile to save space */}
+      {/* Scroll Indicator */}
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2">
         <p
           className="text-white/60 text-xs tracking-[0.2em]"

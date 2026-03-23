@@ -6,7 +6,21 @@ export const metadata = {
   description: 'Full menu of Hungry Birds coffee shop, Oakham.',
 };
 
-const menuSections = [
+type MenuItem = {
+  name: string;
+  price: string;
+  description: string | null;
+  highlight?: boolean;
+};
+
+type MenuSection = {
+  title: string;
+  note: string | null;
+  items: MenuItem[];
+  extras?: string[];
+};
+
+const menuSections: MenuSection[] = [
   {
     title: 'Breakfast',
     note: null,
@@ -171,7 +185,8 @@ export default function MenuPage() {
                 {section.items.map((item, ii) => (
                   <div
                     key={ii}
-                    className={`flex justify-between items-start gap-6 py-3 border-b border-gray-100 ${'bg-stone-50 px-4 -mx-4' 
+                    className={`flex justify-between items-start gap-6 py-3 border-b border-gray-100 ${
+                      item.highlight ? 'bg-stone-50 px-4 -mx-4' : ''
                     }`}
                   >
                     <div className="flex-1">
